@@ -12,7 +12,9 @@ await Bun.build({
     entrypoints: ['src/index.html'],
     outdir: 'dist',
     naming: '[dir]/[name].[ext]',
+    minify: true,
     plugins: [html({
+        inline: true,
         async preprocessor(processor) {
             const files = processor.getFiles();
 

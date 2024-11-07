@@ -10,6 +10,5 @@ const observer = new IntersectionObserver(entries => {
 });
 
 document.querySelectorAll('.into-content').forEach(item => {
-	console.log('item:', item);
 	observer.observe(item);
 })
