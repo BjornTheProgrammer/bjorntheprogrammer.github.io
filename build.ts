@@ -6,8 +6,6 @@ import tailwindcss from 'tailwindcss';
 import twconfig from './tailwind.config.js'
 import autoprefixer from 'autoprefixer';
 
-await $`rm -rf ./dist`
-
 await Bun.build({
     entrypoints: ['src/index.html'],
     outdir: 'dist',
