@@ -1,6 +1,6 @@
 import html, { defaultMinifyOptions } from 'bun-plugin-html'
 import { $ } from 'bun'
-import path from 'path'
+import path from 'node:path'
 import postcss from 'postcss'
 import tailwindcss from 'tailwindcss';
 import twconfig from './tailwind.config.js'
@@ -17,7 +17,7 @@ await Bun.build({
             const files = processor.getFiles();
 
             for (const file of files) {
-                if (file.extension == '.css') {
+                if (file.extension === '.css') {
                     const contents = await postcss([
                         tailwindcss(twconfig),
                         autoprefixer(),
